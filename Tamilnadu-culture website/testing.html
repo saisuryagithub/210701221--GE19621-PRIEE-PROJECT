@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Image Hotspot Navigation</title>
+<link type="text/css" rel="stylesheet" href="css/style.css" />
+<link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" />
+<link type="text/css" rel="stylesheet" href="css/owl.carousel.min.css" />
+<link type="text/css" rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+<link type="image" rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg" />
+<link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,600i,700" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,600,600i" rel="stylesheet">
+<style>
+body {
+    background-color: rgb(62, 64, 64); /* Light grey background color */
+    font-family: 'Raleway', sans-serif;
+    margin: 0;
+    padding: 0;
+}
+
+
+.container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    text-align: center;
+    animation: fadeIn 0.5s ease-in-out;
+}
+
+.container img {
+    max-width: 100%;
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Add a subtle shadow */
+}
+
+.hotspot {
+    position: absolute;
+    background-color: rgba(217, 28, 28, 0.8); /* Semi-transparent background color */
+    border-radius: 50%; /* Make it a circle */
+    width: 15px; /* Adjust size as needed */
+    height: 15px; /* Adjust size as needed */
+    cursor: pointer;
+    animation: pulse 0.5s infinite alternate; /* Add pulsating animation */
+}
+
+.hotop {
+    position: absolute;
+    background-color: rgba(239, 136, 11, 0.8); /* Semi-transparent background color */
+    border-radius: 20%; /* Make it a circle */
+    width: 15px; /* Adjust size as needed */
+    height: 15px; /* Adjust size as needed */
+    cursor: pointer;
+    animation: pulse 0.5s infinite alternate; /* Add pulsating animation */
+}
+
+.button {
+    position: absolute;
+    bottom: -30px; /* Adjust position */
+    left: 50%;
+    transform: translateX(-50%);
+    padding: 10px 20px;
+    background-color: #333; /* Dark grey button background color */
+    color: #fff; /* White text color */
+    border: none;
+    border-radius: 5px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    cursor: pointer; /* Enable cursor for clickable button */
+    opacity: 0; /* Initially hidden */
+    transition: opacity 0.3s ease;
+}
+
+.container:hover .button {
+    opacity: 1; /* Show button on hover */
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes pulse {
+    from {
+        transform: scale(1);
+    }
+    to {
+        transform: scale(1.2);
+    }
+}
+
+h2 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #e87e06; /* Dark grey text color */
+    margin-bottom: 20px;
+}
+
+h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #666; /* Medium grey text color */
+    margin-bottom: 20px;
+}
+
+/* Smooth hover effect for hotspots */
+.hotspot:hover {
+    background-color: rgb(234, 118, 118); /* Full opacity on hover */
+    transition: background-color 0.3s ease;
+}
+</style>
+</head>
+<body>
+<h2>Pallimadam Temple</h2>
+<div class="container">
+    <img src="images/fiji-surprise/pal3.png" id="image1" alt="Image 1">
+    <div class="hotspot" style="left: 50%; top: 50%;" onclick="showNextImage()"></div>
+    <button class="button">Rajagopuram</button>
+</div>
+
+<div class="container" style="display: none;">
+    <img src="images/fiji-surprise/pa.png" id="image2" alt="Image 2">
+    <div class="hotspot" style="left: 30%; top: 38%;" onclick="showNextImage()"></div>
+    <div class="hotspot" style="left: 53%; top: 50%;" onclick="showMyImage()"></div>
+    <button class="button">East Wall</button>
+</div>
+
+<div class="container" style="display: none;">
+    <img src="images/fiji-surprise/pal8.png" id="image4" alt="Image 4">
+    <div class="hotspot" style="left: 23%; top: 50%;" onclick="showNextImage()"></div>
+    <button class="button">South Wall</button>
+</div>
+
+<div class="container" style="display: none;">
+    <img src="images/fiji-surprise/pal6.png" id="image5" alt="Image 5">
+    <div class="hotspot" style="left: 23%; top: 50%;" onclick="showNextImage()"></div>
+    <div class="hotspot" style="left: 85%; top: 50%;" onclick="showDifferentImage()"></div>
+    <button class="button">West Wall</button>
+</div>
+
+<div class="container" style="display: none;">
+  <img src="images/fiji-surprise/north_pall.png" id="image6" alt="Image 6">
+  <button class="button">North Wall</button>
+</div>
+
+<div class="container" style="display: none;">
+  <img src="images/fiji-surprise/vin.png" id="image7" alt="Image 7">
+  <div class="hotop" style="left: 5%; top: 5%;" onclick="showSentiImage()"></div>
+  <button class="button">Vinayagar</button>
+</div>
+
+<div class="container" style="display: none;">
+  <img src="images/fiji-surprise/nand.png" id="image8" alt="Image 8">
+  <div class="hotspot" style="left: 40%; top: 30%;" onclick="showMyImage()"></div>
+  <div class="hotspot" style="left: 40%; top: 30%;" onclick="showNewImage()"></div>
+  <button class="button">Nandhi</button>
+</div>
+
+<div class="container" style="display: none;">
+  <img src="images/fiji-surprise/pad.png" id="image9" alt="Image 9">
+  <div class="hotop" style="left: 5%; top: 5%;" onclick="showBablooImage()"></div>
+  <button class="button"></button>
+</div>
+
+<script>
+var currentImageIndex = 1;
+
+function showNextImage() {
+    var currentImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+    currentImage.classList.remove('slide-in'); // Remove previous animation class
+    currentImage.style.display = 'none';
+    currentImageIndex++;
+    var nextImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+    nextImage.classList.add('slide-in'); // Add slide-in animation class
+    nextImage.style.display = 'flex';
+}
+
+</script>
+
+<script>
+  var currentImageIndex = 1; // Start from the first image
+  
+  function showDifferentImage() {
+      var currentImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      currentImage.classList.remove('slide-in'); // Remove previous animation class
+      currentImage.style.display = 'none';
+      currentImageIndex = 6; // Navigate to Image 7
+      var nextImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      nextImage.classList.add('slide-in'); // Add slide-in animation class
+      nextImage.style.display = 'flex';
+  }
+</script>
+
+<script>
+  var currentImageIndex = 1; // Start from the first image
+  
+  function showMyImage() {
+      var currentImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      currentImage.classList.remove('slide-in'); // Remove previous animation class
+      currentImage.style.display = 'none';
+      currentImageIndex = 7; // Navigate to Image 7
+      var nextImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      nextImage.classList.add('slide-in'); // Add slide-in animation class
+      nextImage.style.display = 'flex';
+  }
+</script>
+
+<script>
+  var currentImageIndex = 1; // Start from the first image
+  
+  function showNewImage() {
+      var currentImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      currentImage.classList.remove('slide-in'); // Remove previous animation class
+      currentImage.style.display = 'none';
+      currentImageIndex = 8; // Navigate to Image 7
+      var nextImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      nextImage.classList.add('slide-in'); // Add slide-in animation class
+      nextImage.style.display = 'flex';
+  }
+</script>
+
+<script>
+  var currentImageIndex = 1; // Start from the first image
+  
+  function showSentiImage() {
+      var currentImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      currentImage.classList.remove('slide-in'); // Remove previous animation class
+      currentImage.style.display = 'none';
+      currentImageIndex = 4; // Navigate to Image 7
+      var nextImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      nextImage.classList.add('slide-in'); // Add slide-in animation class
+      nextImage.style.display = 'flex';
+  }
+</script>
+
+<script>
+  var currentImageIndex = 1; // Start from the first image
+  
+  function showBablooImage() {
+      var currentImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      currentImage.classList.remove('slide-in'); // Remove previous animation class
+      currentImage.style.display = 'none';
+      currentImageIndex = 2; // Navigate to Image 7
+      var nextImage = document.querySelector('.container:nth-of-type(' + currentImageIndex + ')');
+      nextImage.classList.add('slide-in'); // Add slide-in animation class
+      nextImage.style.display = 'flex';
+  }
+</script>
+
+</body>
+</html>

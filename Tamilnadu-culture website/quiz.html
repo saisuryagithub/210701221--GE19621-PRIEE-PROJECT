@@ -1,0 +1,269 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Temple Trivia Quiz</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+  <style>
+    /* Add your custom CSS styles for the quiz here */
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background-image: url("images/ha.jpg");
+      margin: 0;
+      padding: 0;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      height: 100vh;
+    }
+    .container {
+      background-color:rgba(255, 255, 255, 0.388);
+      border-radius: 10px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      padding: 30px;
+      text-align: center;
+    }
+    h1 {
+      font-size: 36px;
+      color: #f0710a;
+      margin-bottom: 20px;
+    }
+    .form-group {
+      margin-bottom: 20px;
+    }
+    .form-control {
+      font-size: 18px;
+      border: 2px solid #f0710a;
+      border-radius: 5px;
+      padding: 10px;
+      width: 300px;
+      transition: border-color 0.3s ease;
+    }
+    .form-control:focus {
+      outline: none;
+      border-color: #3498db;
+    }
+    #startButton {
+      font-size: 20px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      background-color: #f0710a;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    #startButton:hover {
+      background-color: #d95704;
+    }
+    .question {
+      font-size: 24px;
+      color: #333;
+      margin-bottom: 30px;
+    }
+    .options button {
+      font-size: 20px;
+      margin: 10px;
+      padding: 10px 20px;
+      border: none;
+      cursor: pointer;
+      background-color: #f0710a;
+      color: #fff;
+      border-radius: 5px;
+      transition: background-color 0.3s ease;
+    }
+    .options button:hover {
+      background-color: #b96029;
+    }
+    #timerContainer {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-bottom: 20px;
+    }
+    #timer {
+      font-size: 24px;
+      margin-right: 10px;
+      color: #333;
+    }
+    #progressBarContainer {
+      width: 80%;
+      background-color: #ddd;
+      border-radius: 5px;
+      overflow: hidden;
+    }
+    #progressBar {
+      width: 100%;
+      height: 20px;
+      background-color: #4caf50;
+      transition: width 1s linear;
+    }
+    #score {
+      display: none;
+      font-size: 32px;
+      margin-top: 30px;
+      padding: 20px;
+      background-color: #2ecc71;
+      color: #fff;
+      border-radius: 10px;
+      animation: fadeIn 1s ease-in-out;
+      text-align: center;
+    }
+    @keyframes fadeIn {
+      0% { opacity: 0; }
+      100% { opacity: 1; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Welcome to the <strong>Temple Trivia Quiz!</strong></h1>
+    <form id="nameForm" class="form-group">
+      <input type="text" class="form-control" id="userName" placeholder="Enter your name" required>
+      <button id="startButton" type="submit">Start Quiz</button>
+    </form>
+    <div id="quiz" style="display: none;">
+      <div class="question" id="question"></div>
+      <div class="options" id="options"></div>
+      <div id="timerContainer">
+        <div id="timer"></div>
+        <div id="progressBarContainer">
+          <div id="progressBar"></div>
+        </div>
+      </div>
+      <div id="score"></div>
+    </div>
+  </div>
+
+  <script>
+    // JavaScript code for the quiz
+    const questions = [
+      {
+        question: "Who built the sepulchral shrine at Pallimadam for his brother Sundara Pandya?",
+        options: ["Sundara Pandya", "Vira Pandya", "Nandivarman II", "Maran Athichan"],
+        answer: "Vira Pandya"
+      },
+      {
+        question: "What is the name of the elephant associated with Sri Iravatheswar Temple?",
+        options: ["Airavata", "Ganesha", "Parvati"],
+        answer: "Airavata"
+      },
+      {
+        question: "Which dynasty is believed to have built the Kunnandarkoil Cave Temple?",
+        options: ["Pallavas", "Cholas", "Pandyas", "Vijayanagar Empire"],
+        answer: "Pallavas"
+      },
+      {
+        question: "Who is the presiding deity of Meenakshi Sundareswarar Temple at Chokkalingapuram?",
+        options: ["Meenakshi", "Sundareswarar", "Indiran", "Iravatheswar"],
+        answer: "Meenakshi"
+      },
+      {
+        question: "What is the age of Kunnandarkoil Cave Temple?",
+        options: ["500-1000 years old", "1000-2000 years old", "2000-3000 years old", "Less than 500 years old"],
+        answer: "1000-2000 years old"
+      },
+      {
+        question: "Which temple is known as the 'Temple of Seven Pagodas'?",
+        options: ["Meenakshi Amman Temple", "Shore Temple", "Rameswaram Temple", "Brihadeeswarar Temple"],
+        answer: "Shore Temple"
+      },
+      {
+        question: "Who built the Brihadeeswarar Temple, also known as the Big Temple?",
+        options: ["Raja Raja Chola I", "Raja Raja Chola II", "Rajaraja Narendra", "Rajaraja Narendra Deva"],
+        answer: "Raja Raja Chola I"
+      },
+      {
+        question: "Which deity is worshipped at the Brihadeeswarar Temple?",
+        options: ["Lord Vishnu", "Lord Shiva", "Goddess Parvati", "Lord Ganesha"],
+        answer: "Lord Shiva"
+      },
+      {
+        question: "Which architectural style is predominantly seen in the construction of Meenakshi Amman Temple?",
+        options: ["Dravidian Architecture", "Nagara Architecture", "Vesara Architecture", "Indo-Islamic Architecture"],
+        answer: "Dravidian Architecture"
+      },
+      {
+        question: "What is the significance of the Ekambareswarar Temple in Kanchipuram?",
+        options: ["It has the largest temple tower in Tamil Nadu", "It is dedicated to Lord Vishnu", "It is one of the Pancha Bhoota Stalams", "It was built by the Chola dynasty"],
+        answer: "It is one of the Pancha Bhoota Stalams"
+      }
+      // Add more questions here...
+    ];
+
+    let currentQuestion = 0;
+    let score = 0;
+    let timer;
+    let userName; // Define userName globally
+
+    function startQuiz() {
+      userName = document.getElementById("userName").value; // Assign value to userName
+      document.getElementById("nameForm").style.display = "none";
+      document.getElementById("quiz").style.display = "block";
+      showQuestion();
+    }
+
+    function showQuestion() {
+      const questionElement = document.getElementById("question");
+      const optionsElement = document.getElementById("options");
+      const timerElement = document.getElementById("timer");
+      const progressBarElement = document.getElementById("progressBar");
+      questionElement.textContent = questions[currentQuestion].question;
+      optionsElement.innerHTML = "";
+      for (let option of questions[currentQuestion].options) {
+        const button = document.createElement("button");
+        button.textContent = option;
+        button.classList.add("btn");
+        button.classList.add("btn-primary");
+        button.addEventListener("click", () => checkAnswer(option));
+        optionsElement.appendChild(button);
+      }
+      clearInterval(timer); // Clear previous timer
+      let timeLeft = 10;
+      timerElement.textContent = "Time Remaining: " + timeLeft + " seconds";
+      progressBarElement.style.width = "100%";
+      timer = setInterval(() => {
+        timeLeft--;
+        if (timeLeft >= 0) {
+          timerElement.textContent = "Time Remaining: " + timeLeft + " seconds";
+          const progressPercentage = (timeLeft / 10) * 100;
+          progressBarElement.style.width = progressPercentage + "%";
+        } else {
+          clearInterval(timer);
+          nextQuestion();
+        }
+      }, 1000);
+    }
+
+    function checkAnswer(selectedOption) {
+      clearInterval(timer); // Stop the timer
+      if (selectedOption === questions[currentQuestion].answer) {
+        score++;
+      }
+      nextQuestion();
+    }
+
+    function nextQuestion() {
+      currentQuestion++;
+      if (currentQuestion < questions.length) {
+        showQuestion();
+      } else {
+        clearInterval(timer); // Stop the timer
+        showScore();
+      }
+    }
+
+    function showScore() {
+      const scoreElement = document.getElementById("score");
+      scoreElement.textContent = "Congratulations, " + userName + "! Your score is: " + score + "/" + questions.length + "  " + "Thank you for your time!!";
+      scoreElement.style.display = "block"; // Display score
+    }
+
+    document.getElementById("nameForm").addEventListener("submit", (event) => {
+      event.preventDefault();
+      startQuiz();
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,436 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>அரும்பொருள்</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" />
+    <script src="https://kit.fontawesome.com/d6be5d483a.js" crossorigin="anonymous"></script>
+
+    <link type="text/css" rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <link type="image" rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,600i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,600,600i" rel="stylesheet">
+</head>
+<style>
+    h4 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #222222;
+    margin-bottom: 20px;
+}
+.timeline-btn {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #e27515;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-size: 18px;
+    transition: background-color 0.3s ease;
+}
+
+.timeline-btn:hover {
+    background-color: #ff9900;
+}
+
+h2{
+    color: white;
+}
+#loading-screen {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.8); /* semi-transparent white background */
+    z-index: 9999; /* higher z-index to make sure it appears on top of other content */
+    display: none; /* initially hidden */
+}
+
+.spinner {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px; /* Adjust the width of the container */
+    height: 60px; /* Adjust the height of the container */
+}
+
+.spinner img {
+    width: 100%; /* Make sure the GIF fills the container */
+    height: 100%; /* Make sure the GIF fills the container */
+    animation: spin 1s linear infinite; /* Spin animation */
+}
+
+@keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+}
+
+
+
+.accessible-icon-wrapper {
+  display: inline-block;
+  width: 60px; /* Adjust as needed for the circular shape */
+  height: 60px; /* Adjust as needed for the circular shape */
+  border-radius: 50%;
+  background-color: #e48633; /* Light color according to website theme */
+  text-align: center;
+  padding-top: 10px; /* Adjust to center the icon */
+}
+
+.fa-ear-listen {
+  font-size: 24px; /* Increase the size of the icon for better visibility */
+  color: #222; /* Icon color */
+  margin-top: 20px;
+}
+
+.for-disabled {
+  font-weight: bold;
+  font-size: 15px; /* Adjust the font size as needed */
+  color: #222; /* Text color */
+  margin-top: 25px; /* Adjust to add space between the icon and text */
+}
+
+/* Scale Animation */
+@keyframes scale {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.2); }
+  100% { transform: scale(1); }
+}
+
+.fa-scale {
+  animation: scale 1s infinite alternate;
+}
+
+/* ... Other Existing Styles ... */
+
+.comment-icon-wrapper {
+    display: inline-block; /* Adjust as needed for display  */
+    position: relative;    /* For positioning the tooltip */
+}
+
+.comment-icon-wrapper .tooltip { /* Target the tooltip within the new wrapper */
+  visibility: hidden; 
+  /* ... Other tooltip styles remain the same ... */
+}
+
+.comment-icon-wrapper:hover .tooltip {
+  visibility: visible; 
+}
+
+
+/* CSS for Tamil verse section */
+#tamil-verse {
+    background-color: #f8f9fa; /* Light background color */
+    padding: 50px 0;
+}
+
+.tamil-verse-content {
+    text-align: center;
+    font-family: 'Montserrat', sans-serif;
+}
+
+.tamil-verse-content p {
+    font-size: 18px;
+    color: #333; /* Dark text color */
+    line-height: 1.6;
+    margin-bottom: 10px;
+}
+
+.tamil-verse-content p:last-child {
+    margin-bottom: 0;
+    font-style: italic; /* Italics for the last paragraph */
+    color: #666; /* Slightly lighter text color */
+}
+
+/* Animation and transition effects */
+.tamil-verse-content p {
+    transition: color 0.3s ease; /* Smooth transition for text color change */
+}
+
+.tamil-verse-content p:hover {
+    color: #e27515; /* Change text color on hover */
+}
+
+.loading-text {
+    text-align: center; /* Center the text */
+    margin-top: 10px; /* Adjust the spacing between the image and the text */
+    font-size: 16px; /* Adjust the font size as needed */
+    color: #333; /* Set the color of the text */
+}
+
+
+</style>
+<body>
+    <audio autoplay loop>
+        <source src="images/music.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="arrow">
+        <a href="https://siva.sh/sivagpt" id="comment-link">
+            <i class="fa-bounce fa-lg fa-solid fa-comment"></i>
+        </a>
+    </div>
+    
+     
+    <nav>
+        <div class="container">
+            <div class="menu-par">
+                <div class="logo-par">
+                    <a href="index.html">
+                        <h2>அரும்பொருள்</h2>
+                        <h4>Discovering the Hidden Treasures of Tamil Nadu</h4>
+                    </a>
+                </div>
+                <div class="toggle-btn">
+                    <i class="fa fa-bars"></i>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="conatiner">
+            
+            <div class="home_header_info">
+                <h1 class="typewrite" data-period="200" data-type='[ "கல் தோன்றி", "மண் தோன்றா காலத்தே", "வாளோடு முன் தோன்றிய மூத்த குடி தமிழ் குடி" ]'></h1>
+                <p>Tamil Nadu, a tapestry of vibrant wildlife and timeless traditions. As you traverse this land, the Western part indulges your palate with delectable delicacies, while the East beckons you to immerse yourself in its lush greenery. Discover the heartbeat of Tamil Nadu, where rich culture meets the beauty of nature.</p>
+            </div>
+        </div>
+        <div class="video">
+            <video id="video" autoplay loop muted>
+                <source type="video/mp4" src="images/Explore the Rich Heritage and Natural Beauty _ Places to visit & Things to do _ .mp4" />
+            </video>
+        </div>
+    </header>
+
+    <Section id="welcome_Sec">
+        <div class="accessible-icon-wrapper">
+            <a href="disabled.html">
+                
+                <i class="fa-solid fa-lg fa-scale fa-ear-listen"></i>
+              <h4 class="for-disabled">Tap to speak</h4>
+            </a>
+          </div>
+          
+        <div class="container">
+            <h2><span>Where tradition meets technology – Tamil Nadu's sacred synergy!
+            </span></h2>
+            <p>Witness the grand architecture of Tamil Nadu, where every structure narrates a story of ancient wisdom, intricate craftsmanship, and the enduring spirit of a rich cultural heritage.</p>
+        </div>
+        <div class="container_mouse">
+            <span class="mouse-btn">
+                <span class="mouse-scroll"></span>
+            </span>
+            <a href="#slides_parent"><span>Scroll Down</span></a>
+            
+                <div align="center">
+                    <button id="load-content-button-arch" class="btn filter-button active" data-filter="all">
+                        Explore Archeological Excavations Timeline
+                    </button>
+                </div>
+                   
+            </div>
+        </div>
+    </Section>
+    <Section id="slides_parent">
+        <div class="container">
+            <div class="slides">
+                <div class="slide_1">
+                    <a href="https://hrce.tn.gov.in/resources/docs/virtualtour/31962/">
+                        <div class="slide_info">
+                            <p>Meenakshi Amman Temple</p>
+                        </div>
+                    </a>
+                    
+                </div>
+                <div class="slide_1 slide_2">
+                    <a href="https://hrce.tn.gov.in/resources/docs/virtualtour/13968/">
+                    <div class="slide_info">
+                        <p>Rajarajesvaram Temple</p>
+                    </div>
+                </div>
+            </a>
+                <div class="slide_1 slide_3">
+                    <a href="https://www.tamilnadutourism.tn.gov.in/virtualtour-pkg/mamallapuram/index.html">
+                    <div class="slide_info">
+                        <p>Mahabalipuram temple</p>
+                    </div>
+                </div>
+            </a>
+                <div class="slide_1 slide_4">
+                    <a href="https://hrce.tn.gov.in/resources/docs/virtualtour/32123/">
+                    <div class="slide_info">
+                        <p>Madurai Alagar Temple</p>
+                    </div>
+                </div>
+            </a>
+                <div class="slide_1 slide_5">
+                    <a href="https://hrce.tn.gov.in/resources/docs/virtualtour/20343/">
+                    <div class="slide_info">
+                        <p>Thiruvannamalai temple</p>
+                    </div>
+                </div>
+            </a>
+                <div class="slide_1 slide_6">
+                    <a href="https://hrce.tn.gov.in/resources/docs/virtualtour/25700/">
+                    <div class="slide_info">
+                        <p>Sriranganathar temple</p>
+                    </div>
+                </div>
+            </a>
+                <div class="slide_1 slide_7">
+                    <a href="https://hrce.tn.gov.in/resources/docs/virtualtour/38271/">
+                    <div class="slide_info">
+                        <p>Thiruchendur temple</p>
+                    </div>
+                </div>
+            </a>
+            </div>
+        </div>
+
+        <section id="tamil-verse">
+            <div class="container">
+                <div class="tamil-verse-content">
+                    <p>தமிழர் புரந்த பொறியினன் வில்லாத<br>
+                    தமிழர் தொழிலத் தொகுத்தல்</p>
+                    <p style="text-align: right;">- சுப்ரமணிய பாரதியார்</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="row">
+            <div align="center">
+                <button id="load-content-button" class="btn filter-button active" data-filter="all">Visit our Endangered Legacy</button>    
+            </div>
+    </Section>
+    <section id="gallery">
+        <div class="container">
+                <div class="filter-gal-par">
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                        <img src="images/fiji-surprise/4.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                        <img src="images/fiji-surprise/marina.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                        <img src="images/fiji-surprise/mo.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                        <img src="images/fiji-surprise/ala.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                        <img src="images/fiji-surprise/is.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                        <img src="images/fiji-surprise/jall.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                        <img src="images/fiji-surprise/sil.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                        <img src="images/fiji-surprise/kal.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                        <img src="images/fiji-surprise/br.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter hdpe">
+                        <img src="images/fiji-surprise/vaigai.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter sprinkle">
+                        <img src="images/fiji-surprise/per.jpg" class="img-responsive">
+                    </div>
+
+                    <div class="gallery_product col-lg-4 col-md-4 col-sm-4 col-xs-6 filter spray">
+                        <img src="images/fiji-surprise/kar.jpg" class="img-responsive">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-par">
+                <div class="footer-1">
+                    <h2>வாருங்கள் தமிழ் மண்ணுக்கு!</h2></br>
+                </div>
+                <div class="footer-2 fot-info">
+                    <h3>வாழ்க தமிழகம்</h3>
+                    <ul>
+                        <li><a href="https://www.tn.gov.in/tamilnadustate">தமிழ்நாடு பற்றி</a></li>
+                        <li><a href="https://www.tnarch.gov.in/">தமிழக தொல்லியல் துறை</a></li>
+                        <li><a href="https://www.tamilnadutourism.tn.gov.in/">தமிழ்நாடு சுற்றுலா</a></li>
+                    </ul>
+                </div>
+                <div class="footer-4 fot-info">
+                    <h3>எங்களை தொடர்பு கொள்ள</h3>
+                    <ul>
+                       <center><li><a href="#">ராஜ்கமல்</a></li></center>
+                       <center><li><a href="#">+91 9445271124</a></li></center>
+                    </ul>
+                    <ul>
+                        <center><li><a href="#">210701204@rajalakshmi.edu.in</a></li></center>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">Developed by the Rajkamal</p>
+    </footer>
+
+    <div id="loading-screen">
+        <div class="spinner">
+            <img src="https://www.wallsnapy.com/img_gallery/3d-murugan-vel-png-images-1080p-9985392.png" alt="Loading...">
+            <div class="loading-text">Loading...</div>
+        </div>
+    </div>
+    
+    
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/extrenaljq.js"></script>
+    <script>
+$(document).ready(function(){
+    $("#load-content-button").click(function(){
+        $("#loading-screen").show();
+        setTimeout(function(){
+            window.location.href = "page2.html"; // Redirect to page2.html after a delay
+        }, 3000); // Adjust the delay time in milliseconds (e.g., 3000 for 3 seconds)
+    });
+});
+
+$("#load-content-button-arch").click(function(){
+                $("#loading-screen").show();
+                setTimeout(function(){
+                    window.location.href = "arch.html"; // Redirect to arch.html after a delay
+                }, 3000); // Adjust the delay time in milliseconds (e.g., 3000 for 3 seconds)
+            });
+
+
+    </script>
+ <script>
+    document.getElementById('comment-link').addEventListener('click', function(event) {
+        event.preventDefault(); // Prevent default link behavior
+        window.open(this.href, 'newWindow', 'width=400,height=300,resizable=0'); 
+    });
+</script>
+</body>
+
+</html>

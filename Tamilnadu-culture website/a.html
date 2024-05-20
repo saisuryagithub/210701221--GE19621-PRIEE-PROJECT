@@ -1,0 +1,483 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>தமிழ்நாடு</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link type="text/css" rel="stylesheet" href="css/style.css" />
+    <link type="text/css" rel="stylesheet" href="css/font-awesome.min.css" />
+
+    <link type="text/css" rel="stylesheet" href="css/owl.carousel.min.css" />
+    <link type="text/css" rel="stylesheet" href="css/owl.theme.default.min.css" />
+
+    <link type="image" rel="icon" href="https://upload.wikimedia.org/wikipedia/commons/8/81/TamilNadu_Logo.svg" />
+    <link href="https://fonts.googleapis.com/css?family=Raleway:300,400,500,600,600i,700" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Montserrat:400,500,500i,600,600i" rel="stylesheet">
+</head>
+<style>
+    h3 {
+    font-family: 'Montserrat', sans-serif;
+    font-weight: bold;
+    color: #ca7219;
+    margin-bottom: 20px;
+}
+.hero-section{
+  align-items: flex-start;
+  background-image: none;
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+:root{
+  --background-dark: #2d3548;
+  --text-light: rgba(255,255,255,0.6);
+  --text-lighter: rgba(255,255,255,0.9);
+  --spacing-s: 8px;
+  --spacing-m: 16px;
+  --spacing-l: 24px;
+  --spacing-xl: 32px;
+  --spacing-xxl: 64px;
+  --width-container: 1200px;
+}
+
+*{
+  border: 0;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html{
+  height: 100%;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 14px;
+}
+
+body{
+  height: 100%;
+}
+.hero-section{
+  align-items: flex-start;
+  background-image:none;
+  display: flex;
+  min-height: 100%;
+  justify-content: center;
+  padding: var(--spacing-xxl) var(--spacing-l);
+}
+
+.card-grid{
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-column-gap: var(--spacing-l);
+  grid-row-gap: var(--spacing-l);
+  max-width: var(--width-container);
+  width: 100%;
+}
+
+@media(min-width: 540px){
+  .card-grid{
+    grid-template-columns: repeat(2, 1fr); 
+  }
+}
+
+@media(min-width: 960px){
+  .card-grid{
+    grid-template-columns: repeat(4, 1fr); 
+  }
+}
+
+.card{
+  list-style: none;
+  position: relative;
+}
+
+.card:before{
+  content: '';
+  display: block;
+  padding-bottom: 150%;
+  width: 100%;
+}
+
+.card__background{
+  background-size: cover;
+  background-position: center;
+  border-radius: var(--spacing-l);
+  bottom: 0;
+  filter: brightness(0.75) saturate(1.2) contrast(0.85);
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transform-origin: center;
+  transition: 
+    filter 200ms linear,
+    transform 200ms linear;
+}
+
+.card:hover .card__background{
+  transform: scale(1.05) translateZ(0);
+}
+
+.card-grid:hover > .card:not(:hover) .card__background{
+  filter: brightness(0.5) saturate(0) contrast(1.2) blur(20px);
+}
+
+.card__content{
+  left: 0;
+  padding: var(--spacing-l);
+  position: absolute;
+  top: 0;
+}
+
+.card__category{
+  color: var(--text-light);
+  font-size: 0.9rem;
+  margin-bottom: var(--spacing-s);
+  text-transform: uppercase;
+}
+
+.card__heading{
+  color: var(--text-lighter);
+  font-size: 1.9rem;
+  text-shadow: 2px 2px 20px rgba(0,0,0,0.2);
+  line-height: 1.4;
+  word-spacing: 100vw;
+}
+#gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
+#gallery .card {
+  position: relative;
+  width: 300px;
+  height: 300px;
+  margin: 10px;
+  overflow: hidden;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+#gallery .card__background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+  background-position: center;
+  transition: transform 0.3s ease;
+}
+
+#gallery .card:hover .card__background {
+  transform: scale(1.05);
+}
+
+#gallery .card__content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  font-size: 16px;
+}
+
+#gallery .card__heading {
+  margin: 0;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+#gallery .card__description {
+  margin: 10px 0;
+}
+
+#gallery .card__link {
+  color: white;
+  text-decoration: none;
+}
+
+#gallery .card__link:hover {
+  text-decoration: underline;
+}
+
+h1 {
+    color: #ca7219; /* Theme color */
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.content {
+    text-align: justify;
+    margin-bottom: 20px;
+    line-height: 1.6;
+}
+
+.speciality {
+    list-style: disc;
+    margin-left: 20px;
+}
+
+.speciality li {
+    margin-bottom: 10px;
+}
+
+</style>
+<body>
+    <audio autoplay loop>
+        <source src="images/jagad.mp3" type="audio/mpeg">
+        Your browser does not support the audio element.
+    </audio>
+
+    <div id="arrow">
+        <i class="fa fa-arrow-up" aria-hidden="true"></i>
+    </div>
+
+    <nav>
+        <div class="container">
+            <div class="menu-par">
+                <div class="logo-par">
+                    <a href="index.html">
+                        <h2>Athimugam Temple</h2>
+                        <h3>Hosur</h3>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <header>
+        <div class="video">
+            <img src="images/fiji-surprise/shiva.jpg" alt="Explore the Rich Heritage and Natural Beauty">
+        </div>
+    </header>
+
+    <Section id="welcome_Sec">
+        <div class="container">
+
+        </div>
+    </Section>
+
+    </Section>
+</div>
+
+<section id="gallery" style="display: flex; flex-wrap: wrap; justify-content: center; align-items: center;">
+  <div class="card" style="position: relative; width: 300px; height: 500px; margin: 10px; overflow: hidden; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="card__background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.3s ease;"></div>
+    <div class="card__content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background-color: rgba(235, 148, 7); color: white; font-size: 16px;">
+      <h2 class="card__heading" style="margin: 0; font-size: 20px; font-weight: bold;">INTRODUCTION</h2>
+      <p class="card__description" style="margin: 10px 0;">Sri Iravatheswar Temple is located in Athimugam in Shoolagiri Taluk in Krishnagiri District of Tamil Nadu State, India. Sri Iravatheshwar temple in Athimugam, Hosur is believed to be a 1800 years old temple.</p>
+    </div>
+  </div>
+  <div class="card" style="position: relative; width: 300px; height: 500px; margin: 10px; overflow: hidden; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="card__background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.3s ease;"></div>
+    <div class="card__content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background-color: rgb(235, 148, 7); color: white; font-size: 16px;">
+      <h2 class="card__heading" style="margin: 0; font-size: 20px; font-weight: bold;">HISTORY</h2>
+      <p class="card__description" style="margin: 10px 0;">This is the temple where Indiran (King of Devas) and his vahana Iravadham got relieved of Brahmahathi dosham. As the Iravadham elephant (Vahana of Indiran) worshipped in this temple and got relieved of Brahmahathi dosham, the face of Iravadham could be seen on the Shiva lingam. Hasthi means Elephant in Sanskrit and mugam means face. The village is also known as Hasthimugam 
+        <br>which later got changed to Athimugam. Mother Kamakshi Amman is gracing devotees in a standing form behind the Iravatheswar lingam within the same sanctum’s sanctorum (Garba Gruham).</p>
+    </div>
+  </div>
+  <div class="card" style="position: relative; width: 300px; height: 500px; margin: 10px; overflow: hidden; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="card__background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.3s ease;"></div>
+    <div class="card__content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background-color: rgba(235, 148, 7); color: white; font-size: 16px;">
+      <h2 class="card__heading" style="margin: 10; font-size: 20px; font-weight: bold;">TEMPLE</h2>
+      <p class="card__description" style="margin: 10px 0;">The temple has two presiding deities. Besides the one mentioned above, Lord Shiva in the form of Sri Alageshwara Swamy graces with Mother Akilandeswari in a different sanctum in this temple.</p>
+    </div>
+  </div>
+  <div class="card" style="position: relative; width: 300px; height: 500px; margin: 10px; overflow: hidden; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="card__background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.3s ease;"></div>
+    <div class="card__content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background-color: rgba(235, 148, 7); color: white; font-size: 16px;">
+      <h2 class="card__heading" style="margin: 0; font-size: 20px; font-weight: bold;">SPECIALITY</h2>
+      <p class="card__description" style="margin: 10px 0;">This temple is an Irratai sannithi temple, i.e., there are two moolavars. The Iravatheswar shrine has Appar and Thirugnana Sambandar statues. So it is believed that this temple should have been visited by them.This is also a temple of Sun Worship. Nandhi (Vahanam of Lord Shiva) is seated slightly away in front of Lord Iravatheswar leaving way for the Surya puja. The rays of Sun fall on the Lord during the first week of Tamil month of Thai (mid January to mid February). As Nandhi is on a side to facilitate Surya puja, other planets (navagrahas) are also in a calm and sitting form. The Navagrahas in this temple are in a calm and seated position.</p>
+    </div>
+  </div>
+  <div class="card" style="position: relative; width: 300px; height: 500px; margin: 10px; overflow: hidden; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="card__background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.3s ease;"></div>
+    <div class="card__content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background-color: rgba(235, 148, 7); color: white; font-size: 16px;">
+      <p class="card__description" style="margin: 10px 0;">As the Iravadham elephant worshipped the Lord in this temple, the Shivalinga has that image on the face.There is a pancha lingam sannidhi with 5 Shiva lingams in 5 sanctums in a row with Nandhi in front of each Shiva linga.The Sthala viruksham is Vilva tree. Vilva tree in this temple is about 1800 years old and it is said to be the very oldest, tallest and biggest in the world. The tree is still very lively and majestic.Lord Murugan is seen with his consorts Valli and Deivanai. Lord Murgan’s vahanam peacock is seen facing the left side of Lord Murugan and it is a rare thing to see.</p>
+    </div>
+  </div>
+
+  <div class="card" style="position: relative; width: 300px; height: 500px; margin: 10px; overflow: hidden; border-radius: 10px; box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);">
+    <div class="card__background" style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background-size: cover; background-position: center; transition: transform 0.3s ease;"></div>
+    <div class="card__content" style="position: absolute; bottom: 0; left: 0; width: 100%; padding: 10px; background-color: rgba(235, 148, 7); color: white; font-size: 16px;">
+      <p class="card__description" style="margin: 10px 0;">The temple is specifically beneficial for education and career growth. All the devotees who are thronging the temple now are beneficiaries of the lord by way of career growth and industrial growth. It is believed that praying to the Lord in this temple continuously for 5 pradosha will bring out a huge change in one’s career. People pray for the removal of obstacles in marriage, for child boon, achievements in education and career growth.The temple is almost 7 feet below the village, and furthermore, the suyambu lingam is 3 feet below the ground level of the temple.</p>
+    </div>
+  </div>
+</section>
+    <section class="hero-section">
+        <div class="card-grid">
+          <a class="card" href="a.html">
+            <div class="card__background" style="background-image: url(images/fiji-surprise/at2.jpg)"></div>
+            <div class="card__content">
+              <h2 class="card__heading">Front mandapam</h2>
+            </div>
+          </a>
+          <a class="card" href="places.html">
+            <div class="card__background" style="background-image: url(images/fiji-surprise/at3.jpg)"></div>
+            <div class="card__content">
+              <h2 class="card__heading"></h2>
+            </div>
+          </a>
+          <a class="card" href="k.html">
+            <div class="card__background" style="background-image: url(images/fiji-surprise/at4.jpg)"></div>
+            <div class="card__content">
+              <h2 class="card__heading">Alageshwara shrine</h2>
+            </div>
+          </a>
+          <a class="card" href="pal.html">
+            <div class="card__background" style="background-image: url(images/fiji-surprise/at5.jpg)"></div>
+            <div class="card__content">
+              <h2 class="card__heading"></h2>
+            </div>
+          </a>
+          <a class="card" href="cc.html">
+            <div class="card__background" style="background-image: url(images/fiji-surprise/at6.jpg)"></div>
+            <div class="card__content">
+              <h2 class="card__heading"></h2>
+            </div>
+          </a>
+          <a class="card" href="val.html">
+            <div class="card__background" style="background-image: url(images/fiji-surprise/at7.jpg)"></div>
+            <div class="card__content">
+              <h2 class="card__heading"></h2>
+            </div>
+          </a>
+        </a>
+        <a class="card" href="#">
+          <div class="card__background" style="background-image: url(images/fiji-surprise/at8.jpg)"></div>
+          <div class="card__content">
+            <p class="card__category"></p>
+            <h2 class="card__heading"></h2>
+          </div>
+        </a>
+      </a>
+      <a class="card" href="#">
+        <div class="card__background" style="background-image: url(images/fiji-surprise/at9.jpg)"></div>
+        <div class="card__content">
+          <p class="card__category"></p>
+          <h2 class="card__heading"></h2>
+        </div>
+      </a>
+        <div>
+      </section>
+    <footer>
+        <div class="container">
+            <div class="footer-par">
+                <div class="footer-1">
+                    <h2>வாருங்கள் தமிழ் மண்ணுக்கு!</h2>
+                </div>
+                <div class="footer-2 fot-info">
+                    <h3>வாழ்க தமிழகம்</h3>
+                    <ul>
+                        <li><a href="https://www.tn.gov.in/tamilnadustate">தமிழ்நாடு பற்றி</a></li>
+                        <li><a href="https://www.tnarch.gov.in/">தமிழக தொல்லியல் துறை</a></li>
+                        <li><a href="https://www.tamilnadutourism.tn.gov.in/">தமிழ்நாடு சுற்றுலா</a></li>
+                    </ul>
+                </div>
+                <div class="footer-4 fot-info">
+                    <h3>எங்களை தொடர்பு கொள்ள</h3>
+                    <ul>
+                       <center><li><a href="#">ராஜ்கமல்</a></li></center>
+                       <center><li><a href="#">+91 9445271124</a></li></center>
+                    </ul>
+                    <ul>
+                        <center><li><a href="#">210701204@rajalakshmi.edu.in</a></li></center>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <p class="copyright">Developed by the Rajkamal</h3>
+    </footer>
+
+    <script type="text/javascript" src="js/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript" src="js/owl.carousel.min.js"></script>
+    <script type="text/javascript" src="js/extrenaljq.js"></script>
+</body>
+
+</html>
